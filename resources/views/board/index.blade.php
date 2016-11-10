@@ -47,7 +47,7 @@
 @section("css")
     @parent
     <link rel="stylesheet" href="{{asset("assets/css/board-index.css")}}">
-ss
+ssss
 @endsection
 
 @section("js")
