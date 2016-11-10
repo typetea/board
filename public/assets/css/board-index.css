@@ -1,0 +1,21 @@
+.res{
+    width: 95%;
+    word-wrap: break-word;
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    padding-bottom: 5px;
+    margin:  30px auto;
+
+}
+
+.res .title{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.res .res-footer{
+    border-top: 1px solid black;
+    padding:5px 30px;
+    margin: auto;
+}
