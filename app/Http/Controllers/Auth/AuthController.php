@@ -42,8 +42,8 @@ class AuthController extends Controller {
             $img = file_get_contents($img);
         }
         return response($img)->header("Content-Type", "image/jpeg");
-
     }
+
 
     public function signupConfirm(Request $request){
 

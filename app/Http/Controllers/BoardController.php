@@ -19,9 +19,10 @@ class BoardController extends Controller
     {
         $thread = $request->input("threadId");
         $ressList = Ress::where("thread_id", "=", $thread)->get();
-
+        $threadTitle = Thread::findOrFail($thread)["title"];
         return view("board.ressList", [
-            "ressList" => $ressList
+            "ressList" => $ressList,
+            "threadTitle"=>$threadTitle
         ]);
     }
 

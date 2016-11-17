@@ -1,5 +1,6 @@
 <div class="well well-sm text-center" style="height: 80px">
-    <h2>スレッド名</h2>
+    <h2>{{$threadTitle}}</h2>
+
 </div>
 <ul style="list-style-type: none;padding: 0">
     @foreach($ressList as $ress)
@@ -19,6 +20,7 @@
                 <span>
                     　投稿日 {{date("Y年n月j日H:i分s秒",strtotime($ress["created_at"]))}}
                 </span>
+
             </div>
         </li>
     @endforeach

@@ -26,6 +26,8 @@ Route::group(["middleware"=>"auth"],function (){
 
     Route::get("/member/modif",["as"=>"member.modif","uses"=>"MemberController@memberModif"]);
     Route::get("/member/change-thumbnail",["as"=>"member.changeThum","uses"=>"MemberController@changeThumbnail"]);
+    Route::post("/member/upload-thumbnail",["as"=>"member.uploadThum","uses"=>"MemberController@uploadThumbnail"]);
+
     Route::get("/","BoardController@index");
 });
 

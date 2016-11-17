@@ -37,7 +37,7 @@
     </column>
     <column id="17" parent="7" name="thum">
       <mandatory>1</mandatory>
-      <data-type>blob|0</data-type>
+      <data-type>mediumblob|0</data-type>
     </column>
     <column id="18" parent="7" name="active">
       <mandatory>1</mandatory>
