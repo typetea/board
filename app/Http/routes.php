@@ -11,6 +11,7 @@
 |
 */
 
+//ログイン状態
 Route::group(["middleware"=>"auth"],function (){
     Route::get("/threads-list",["as"=>"threadsList","uses"=>'BoardController@getThreadList']);
     Route::any("/ress-list",["as"=>"ressList","uses"=>'BoardController@getRessList']);
@@ -25,9 +26,13 @@ Route::group(["middleware"=>"auth"],function (){
 
     Route::get("/member/modif",["as"=>"member.modif","uses"=>"MemberController@memberModif"]);
     Route::get("/member/change-thumbnail",["as"=>"member.changeThum","uses"=>"MemberController@changeThumbnail"]);
+    Route::get("/","BoardController@index");
 });
 
+
+//非ログイン
 Route::group(["middleware"=>"guest"],function (){
+    Route::get("/",'Auth\AuthController@getLogin');
     Route::get("/login",["as"=>"login","uses"=>'Auth\AuthController@getLogin']);
     Route::post("/login",["as"=>"login","uses"=>'Auth\AuthController@login']);
     Route::get("/sign-up",["as"=>"sign-up","uses"=>'Auth\AuthController@getCreateMember']);

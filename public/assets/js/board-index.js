@@ -18,7 +18,7 @@ $(function () {
         board.showRess();
     });
 
-    $("#threadBtn").on("click", function () {
+    $('#threadBtn').on("click", function () {
         $("#threadDialog").dialog({
             title: "スレッド作成",
             width: 500,
@@ -39,13 +39,24 @@ $(function () {
     });
 
     $("#res-list").on("click", ".ressDeleteBtn", function () {
+
         $.post("ress-delete", {
-            ress_id: $(this).closest(".res").data("ress_id"),
+            ress_id: $(this).data("ress_id"),
             thread_id: board.showTh,
             _token: $('meta[name="csrf-token"]').attr('content')
         }, function () {
             board.showRess();
         });
+        $("#deleteModal").modal("hide");
+    });
+
+    $("#res-list").on("show.bs.modal","#deleteModal",function (event) {
+        var $button = $(event.relatedTarget);
+        var $ress = $button.closest(".res");
+        var title = $ress.find(".title").text();
+        $(this).find(".modal-body h3").html("").append(title);
+        $(this).find(".ressDeleteBtn").data("ress_id",$ress.data("ress_id"));
+
     });
 });
 

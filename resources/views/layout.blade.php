@@ -8,12 +8,12 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         @yield("css")
         @yield("header")
     </head>
     <body class="container">
         @yield("content")
+
         <script src="{{asset("assets/bootstrap-3.3.7-dist/js/bootstrap.js")}}"></script>
         @yield("js")
 

@@ -11,10 +11,14 @@
             <div class="text-right res-footer">
                 @if(Auth::user()->id==$ress["member_id"])
                     <!--<button class="btn btn-success btn-sm">編集</button>-->
-                    <button class="btn btn-danger btn-sm ressDeleteBtn">削除</button>
+                    <button class="btn btn-danger btn-sm " data-toggle="modal" data-target="#deleteModal">
+                        削除
+                    </button>
                 @endif
                 {{$ress->member["name"]}}
-                投稿日: 2016年8月5日 09:52:31
+                <span>
+                    　投稿日 {{date("Y年n月j日H:i分s秒",strtotime($ress["created_at"]))}}
+                </span>
             </div>
         </li>
     @endforeach
@@ -42,4 +46,23 @@
 
     <div class="col-sm-1"></div>
 
+</div>
+
+<!--モーダル・ダイアログ-->
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" aria-hidden="true" data-dismiss="modal"><span>&times;</span></button>
+                <h4>削除確認</h4>
+            </div>
+            <div class="modal-body">
+                本当に削除しますか？
+                <h3></h3>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger ressDeleteBtn">削除</button>
+            </div>
+        </div>
+    </div>
 </div>
